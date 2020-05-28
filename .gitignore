@@ -3,3 +3,4 @@ __pycache__/
 utils/__pycache__/
 display/__pycache__/
 venv/
+.DS_Store
