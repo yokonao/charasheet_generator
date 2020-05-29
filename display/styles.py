@@ -46,6 +46,6 @@ class Style:
             *get_overall(True),
             *title,
             # sections
-            ('LINEAFTER', (2, 0), (2, -1), 0.01, colors.black),
-            ('LINEAFTER', (4, 0), (4, -1), 0.01, colors.black),
+            ('LINEAFTER', (2, 0), (2, -1), 0.8, colors.black),
+            ('LINEAFTER', (4, 0), (4, -1), 0.8, colors.black),
         ])

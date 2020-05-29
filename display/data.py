@@ -4,6 +4,13 @@ from utils.proccess import json_to_chara
 class Data:
     def __init__(self, data):
         self.chara = json_to_chara(data)
+        # "os" is original skill(max=11)
+        self.os_keys = ["", "", "", "", "", "", "", "", "", "", ""]
+        self.os_values = ["", "", "", "", "", "", "", "", "", "", ""]
+        for i, (key, value) in enumerate(self.chara.original_skill.items()):
+            self.os_keys[i] = key
+            self.os_values[i] = value
+
         self.picture = [['']]
         self.profile = [
             ['プロフィール', '', '', ''],
@@ -68,9 +75,12 @@ class Data:
              '電子工学', self.chara.electronics, '博物学', self.chara.natural_history],
             ['経理', self.chara.accounting, '法律', self.chara.law,
              '考古学', self.chara.archaeology, '人類学', self.chara.anthropology],
-            ['自由技能', '', '', '', '', '', '', ''],
-            ['', '', '', '', '', '', '', ''],
-            ['', '', '', '', '', '', '', ''],
+            ['自由技能', '', self.os_keys[0], self.os_values[0], self.os_keys[1], self.os_values[1],
+             self.os_keys[2], self.os_values[2]],
+            [self.os_keys[3], self.os_values[3], self.os_keys[3], self.os_values[4],
+             self.os_keys[5], self.os_values[5], self.os_keys[6], self.os_values[6]],
+            [self.os_keys[7], self.os_values[7], self.os_keys[8], self.os_values[8],
+             self.os_keys[9], self.os_values[9], self.os_keys[10], self.os_values[10]],
         ]
         self.battle_skill = [
             ['戦闘技能'],
